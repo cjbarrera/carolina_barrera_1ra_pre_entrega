@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Agenda personal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!----- TITULO ------->
+<div class="o-container-title">
+    <div class="perfil">
+        <div id="fecha"></div>
+        <h1>Tu agenda personal</h1>
+        <p>Agrega todos tus pendientes y obtén un mejor control</p>
+    </div>
+
+ <div class="agregar-tarea">
+        <input type="text" id="input" placeholder="Agregar una tarea">
+        <input type="date" class="txt-con" id="fechaTarea" placeholder="Fecha de realización">
+        <select class="prioridad txt-con" id="prioridad" placeholder="Prioridad">
+           <option value="baja">Baja</option>
+           <option value="media">Media</option>
+           <option value="alta">Alta</option>
+       </select>
+       <i id="boton-enter" class="fas fa-plus-circle"></i>
+    </div>
+
+
+    
+
+
+
+    <!----- TITULO ------->
+    <div class="o-container-title">
+        <h2>Lista de tareas pendientes</h2>
+        <p></p>
+    </div>
+
+    <!--inicio grid 3 col-->
+    <section>
+        <section class="o-container-grid-5-tabla">
+            <div class="item-col1 blue-dark">
+                <h3>Check</h3>
+            </div>
+            <div class="item-col1 blue-dark">
+                <h3>Tarea</h3>
+            </div>
+            <div class="item-col1 blue-dark">
+                <h3>Fecha de realización</h3>
+            </div>
+            <div class="item-col1 blue-dark">
+                <h3>Prioridad</h3>
+            </div>
+            <div class="item-col1 blue-dark">
+                <h3>Eliminar</h3>
+            </div>
+        </section>
+        <section id="lista" class="content">
+        </section>
+    </section>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="o-container-title" id="calendar"></div>
+<script src="main.js"></script>   
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script> 
+</body>
+</html>
