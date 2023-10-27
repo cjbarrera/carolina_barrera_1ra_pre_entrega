@@ -1,0 +1,22 @@
+[
+    {
+        "titulo": "Playa Tropical",
+        "descripcion": "Arena blanca y aguas cristalinas bajo un cielo despejado.",
+        "imagen": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
+    },
+    {
+        "titulo": "Montañas Verdes",
+        "descripcion": "Colinas cubiertas de vegetación con un río serpenteante.",
+        "imagen": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
+    },
+    {
+        "titulo": "Atardecer en el Desierto",
+        "descripcion": "Dunas de arena iluminadas por los últimos rayos de sol.",
+        "imagen": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
+    },
+    {
+        "titulo": "Bosque Encantado",
+        "descripcion": "Árboles altos y misteriosos con un suelo cubierto de musgo.",
+        "imagen": "https://concepto.de/wp-content/uploads/2015/03/paisaje-e1549600034372.jpg"
+    }
+]
