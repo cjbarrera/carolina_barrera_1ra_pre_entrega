@@ -56,16 +56,32 @@ function agregarTarea(tarea, fecha, prioridad, id, realizado, eliminado) {
         </div>
     `
     lista.insertAdjacentHTML("beforeend", elemento);
+    
 }
 
 
-function agregarTareaAlCalendario(tarea, fechaTarea, prioridad, id, calendar) {
-    var evento = {
-        title: tarea,
-        start: fechaTarea,
-    };
-    calendar.addEvent(evento);
-    calendar.render();
+function agregarTareaAlCalendario(tarea, prioridad) {
+
+    const dataCalendario = document.querySelector('#calendar');
+    const tituloEvento = document.querySelector('.fc-daygrid-day-events')
+    const prioridadTarea = document.querySelector('.fc-daygrid-day-bg')
+    console.log(dataCalendario)
+    tituloEvento.innerHTML = `${tarea}`
+    prioridadTarea.innerHTML = `${prioridad}`
+
+    const dataFecha = document.getElementsByTagName('td')
+    console.log(dataFecha)
+
+
+
+
+ 
+    // var evento = {
+    //     title: tarea,
+    //     start: fechaTarea,
+    // };
+    // calendar.addEvent(evento);
+    // calendar.render();
   }
 
 
@@ -101,7 +117,7 @@ botonEnter.addEventListener('click', () => {
 
     if (tarea) {
         agregarTarea(tarea, fechaTarea, prioridad, id, false, false)
-        agregarTareaAlCalendario(tarea, fechaTarea, prioridad, id);
+        agregarTareaAlCalendario(tarea, prioridad);
 
         // localStorage para almacenar la tarea, fecha, prioridad, etc.
         LIST.push({
@@ -118,6 +134,8 @@ botonEnter.addEventListener('click', () => {
         input.value = ''
         document.querySelector('#fechaTarea').value = ''
         document.querySelector('#prioridad').value = 'baja'
+
+        
     }
 })
 
@@ -195,3 +213,41 @@ function cargarLista(array) {
         agregarTarea(item.nombre, item.fecha, item.prioridad, item.id, item.realizado, item.eliminado)
     })
 }
+
+
+
+
+
+//carruselmaxi
+
+const carouselInner = document.getElementById("carouselInner")
+const carouselIndicators = document.getElementById("carouselIndicators")
+const traerDataCarousel = async () =>{
+    const response = await fetch("./dataCarousel.json")
+    const dataCarousel = await response.json()
+    dataCarousel.forEach((element,index) => {
+  
+        const div = document.createElement("div")
+        if( index == 0){
+            div.className= "carousel-item active"
+        }else{
+            div.className= "carousel-item"
+            const miBoton = document.createElement("button")
+            miBoton.setAttribute('type', 'button')
+            miBoton.setAttribute('data-bs-target', '#carouselExampleCaptions')
+            miBoton.setAttribute('data-bs-slide-to', index)
+            miBoton.setAttribute('aria-label', "Slide" + index)
+            carouselIndicators.append(miBoton)
+        }
+        
+        div.innerHTML = `<img src="${element.imagen}" class="d-block w-100" alt="...">
+                         <div class="carousel-caption d-none d-md-block">
+                            <h5>${element.titulo}</h5>
+                            <p>${element.descripcion}</p>
+                        </div>
+        `
+        carouselInner.append(div)
+    });
+}
+
+traerDataCarousel()
